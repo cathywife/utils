@@ -26,10 +26,10 @@ class MainHandler(tornado.web.RequestHandler):
     @tornado.gen.coroutine   
     def get(self):
         name = self.get_argument('name', None)
-        ret = yield executor.submit(__echo, name)
+        ret = yield executor.submit(self.__echo, name)
         self.write(ret)
 
-    def __echo(i):
+    def __echo(self, i):
         return i
 
 
