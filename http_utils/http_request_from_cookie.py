@@ -28,8 +28,6 @@ class LoginException(Exception):
 
 
 class Ldapapi(object):
-
-    '''class for api that authenticate via ldap'''
     is_login = False
     host_url = host
 
