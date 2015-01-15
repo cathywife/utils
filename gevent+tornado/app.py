@@ -15,10 +15,10 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         """ 请求处理示例代码.
 
-        在这里故意 sleep 1, 注意如果没有 8 - 11 行的代码,
-        这里的 sleep 1 是阻塞的, 也就是一次只能处理一个请求;
-        有了 8 - 11, gevent 的威力发挥出来了, 并发量大大
-        提高.
+        在这里故意 sleep 1, 注意如果没有上面几行 gevent 
+        的代码, 这里的 sleep 1 是阻塞的, 也就是一次只能
+        处理一个请求; 
+        有了 gevent, 威力大增, 并发量大大提高.
 
         """
         import time
