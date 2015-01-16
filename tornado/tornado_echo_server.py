@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-#
-#   Author  :   cold
-#   E-mail  :   wh_linux@126.com
-#   Date    :   13/04/15 15:08:51
-#   Desc    :   Tornado Echo Server
-#   HOME    :   http://www.linuxzen.com
-#
+
 
 import Queue
 import socket
@@ -14,6 +8,7 @@ import socket
 from functools import partial
 
 from tornado.ioloop import IOLoop
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.setblocking(0)              # 将socket设置为非阻塞

@@ -1,12 +1,12 @@
-'''
-See:
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
 
-- https://gist.github.com/akhenakh/2894704/raw/0735da48251e77ad8a29230b92f6a6ce3a4f604c/gistfile1.py
-'''
+""" 这里开了5个线程, 所以一次能处理五个请求.
+
+"""
+
 import functools
-import time
 import threading
-import logging
 import Queue
 import hunspell
 
@@ -16,7 +16,9 @@ import tornado.locale
 import tornado.ioloop
 from tornado.options import define, options
 
+
 define('debug', type=bool, default=False, help='run in debug mode with autoreload (default: false)')
+
 
 class Handler(tornado.web.RequestHandler):
     @property
@@ -30,6 +32,7 @@ class Handler(tornado.web.RequestHandler):
     def on_callback(self, output):
         self.write("Thread output: %s" % output)
         self.finish()
+
 
 class ThreadWord(threading.Thread):
     def __init__(self, queue):
@@ -48,6 +51,7 @@ class ThreadWord(threading.Thread):
             tornado.ioloop.IOLoop.instance().add_callback(functools.partial(callback, output))
             self.queue.task_done()
 
+
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
@@ -65,6 +69,7 @@ class Application(tornado.web.Application):
             t = ThreadWord(self.queue)
             t.setDaemon(True)
             t.start()
+
 
 if __name__ == "__main__":
     tornado.options.parse_command_line()

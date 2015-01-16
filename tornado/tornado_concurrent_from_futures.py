@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #-*- coding: utf-8 -*-
 
 """
@@ -8,7 +9,6 @@
     futures 官方文档:
         https://docs.python.org/3/library/concurrent.futures.html
 """
-
 
 import tornado.ioloop
 import tornado.web
