@@ -221,7 +221,7 @@ def wget(url, target, speed=30m):
     """  下载文件.
 
     """
-    cmd = "wget --limit-rate=%s %s %s" % (speed, url, target)
+    cmd = "wget --limit-rate=%s %s -O %s" % (speed, url, target)
     rc, ro, re = shell(cmd)
     if rc == 0:
         return True
