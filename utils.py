@@ -146,9 +146,12 @@ def check_wait_null(check_cmd, timeinit=0, interval=10, timeout=600):
     return False
 
 
-def dns_resolv(hostnames=[]):
-    if hostnames == []:
+def dns_resolv(hostnames=None):
+    if hostnames is None:
         return []
+    if not isinstance(hostnames, list):
+        return []
+
     ips = list()
     for hostname in hostnames:
         cmd = ''' nslookup %s |grep -v "#53" |grep "Address:" ''' % hostname
