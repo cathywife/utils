@@ -67,7 +67,7 @@ class Ldapapi(object):
     def login(self):
         opener = urllib2.build_opener(HTTPCookieRedirectHandler)
         urllib2.install_opener(opener)
-        urllib2._opener.handlers[1].set_http_debuglevel(100)
+        #urllib2._opener.handlers[1].set_http_debuglevel(100)
 
         auth_url = r"http://" + self.host_url + r"/" + self.auth_uri
         data_dict = {"j_username": self.username, 'j_password': self.password}
