@@ -11,7 +11,7 @@ import redis
 
 def get():
     clinet = redis.StrictRedis(host='localhost', port=6379, db=0)
-    pipe = client.pipeline()
+    pipe = clinet.pipeline()
 
     while 1:
         try:
