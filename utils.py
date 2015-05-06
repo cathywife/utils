@@ -38,7 +38,7 @@ def get_extra_ip():
     用到了 shell 函数.
 
     """
-    cmd = ''' /sbin/ifweb.config |grep "inet addr:" |egrep -v "127.0.0.1|10\.|192\.168\." |awk '{print $2}' |awk -F ":" '{print $2}' '''
+    cmd = ''' /sbin/ifconfig |grep "inet addr:" |egrep -v "127.0.0.1|10\.|192\.168\." |awk '{print $2}' |awk -F ":" '{print $2}' '''
     rc, so, se = shell(cmd)
 
     if rc == 0:
