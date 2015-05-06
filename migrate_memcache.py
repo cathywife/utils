@@ -5,7 +5,7 @@
 
 迁移方法:
 1. 在源主机用 stats items 拿到每个 slab 的 key 的数量;
-2. 用 stats cachedump slab号 最大key 数量, 把每个 slab 的
+2. 用 stats cachedump slab号 最大key数量, 把每个 slab 的
    key 都拿到; 
 3. 对于每一个 key, 从源主机取出来, set 到新主机.
 
@@ -43,7 +43,6 @@ def stats_items():
                 "number" : data[i]
             }
             slab_number.append(_dict)
-            print _dict
 
     return slab_number
 
