@@ -25,8 +25,8 @@
 import memcache
 
 
-origin_host = "cache5.hy01"
-new_host = "apps-memcached0-bgp0.hy01"
+origin_host = ""
+new_host = ""
 port = 11211
 
 origin_mc = memcache.Client(['%s:%s' % (origin_host, port) ], debug=0)
