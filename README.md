@@ -1,4 +1,4 @@
 utils
 =====
 
-Some useful gadgets.
+一些实用工具和编程范例集合.
