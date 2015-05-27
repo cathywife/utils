@@ -31,6 +31,19 @@ b'xxx' is str? True
 10.0 / 3 = 3.33333333333
 10 // 3 = 3
 
+
+另外, from __future__ import absolute_import 可以强制使用绝对引用, 
+禁止隐士相对引用, 从 Python3 开始默认强制使用绝对引用(Python2.7 
+可能禁止).
+
+
+from __future__ import with_statement 这条语句可以安全的关闭使用 with
+ 打开的句柄等资源(从 Python2.6 开始已经支持此选项, 不用 import).
+
+
+from __future__ import print_function 这条语句是把 print 变成一个函数,
+从 Python3 开始强制使用 print 函数, print '' 这种语句会报错. 
+
 """
 
 from __future__ import unicode_literals, division
