@@ -6,7 +6,7 @@
 
 Python3 和 Python2 字符串比较:  
 在 2.x 里的字符串用'xxx'表示str, Unicode字符串用u'xxx'表示unicode; 
-在 3.x中, 所有字符串都被视为unicoder, 写u'xxx'和'xxx'是完全一致的.
+在 3.x中, 所有字符串都被视为unicode, 写u'xxx'和'xxx'是完全一致的.
 
 import unicode_literals 时候结果是:
 'xxx' is unicode? True
