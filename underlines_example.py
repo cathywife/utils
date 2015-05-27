@@ -7,9 +7,10 @@ _method 表示私有函数, 只能从内部调用(强制显示调用也可以,
 但是不推荐这么做);
  
 __method 表示它是一个不可覆盖的函数, 比如A类声明了__method
-, B类继承A, 即使B类也声明了__method, __method 还是A的__method,
-B类的声明无效. 如果一个声明了__method, Python会把它改成
-_类名__method, 所以继承的类也修改不了, __method 不常用;
+, B类继承A, 即使B类也声明了__method, __method 还是A的
+__method, B类的声明无效, 因为如果类一个声明了__method, 
+Python会把它改成 _类名__method, 所以继承的类也修改不了, 
+__method 不常用;
 
 对于__method__, 它是操作符或者是被称为魔法函数的本地函数, 
 你不必调用它, Python 来调用它, 类似的函数有 __init__, __new__
