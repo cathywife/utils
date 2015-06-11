@@ -16,7 +16,6 @@ HOST = ""
 
 class HTTPRequstClass(object):
     def __init__(self, host_url=HOST):
-        self.is_login = False
         self.host_url = host_url
 
     def post_wrapper(self, url, data_dict):
