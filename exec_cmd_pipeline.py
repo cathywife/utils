@@ -5,7 +5,7 @@
 import subprocess
 
 
-def exec_water(cmd):
+def pipeline(cmd):
     """ 执行命令, 循环输出执行结果 """
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     while proc.poll() is None:
@@ -16,4 +16,4 @@ def exec_water(cmd):
 
 if __name__ == "__main__":
     cmd = "echo 1; sleep 1 ;echo 2"
-    exec_water(cmd)
+    pipeline(cmd)
